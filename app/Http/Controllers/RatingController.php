@@ -16,9 +16,10 @@ class RatingController extends Controller
     {
         $authors = Author::orderBy('name')->get();
         $getAuthor = $request->input('author_id');
+        $getBook = $request->input('book_id');
         $books = Book::where('author_id', $request->author_id)->get();
 
-        return view('rating.rating', compact('authors', 'books'));
+        return view('rating.rating', compact('authors', 'books', 'getAuthor', 'getBook'));
     }
 
     public function store(Request $request)
@@ -34,7 +35,7 @@ class RatingController extends Controller
         ]);
 
         if ($rating) {
-            return redirect()->route('/')->with('success', 'Rating created successfully!');
+            return redirect()->route('index')->with('success', 'Rating created successfully!');
         } else {
             return redirect()->back()->with('error', 'Failed to create rating!');
         }

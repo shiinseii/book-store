@@ -6,13 +6,19 @@
 
 <div>
     <h1>Books</h1>
+    <hr>
     <div>
-        
+        <a href="{{ route('rating.create') }}">Add Rating</a>
+    </div>
+    <br>
+    <div>
         <div>
             <form action="{{ route('index') }}" method="get">
                 <label for="query">Search</label>
-                <input type="text" name="query" id="query" value="{{ $query }}"/>
-                <input type="submit" value="search" />
+                <div class="d-flex gap-3">
+                    <input class="form-control" type="text" name="query" id="query" value="{{ $query }}"/>
+                    <input class="btn btn-outline-light" type="submit" value="search" />
+                </div>
             </form>
         </div>
         <div>
@@ -26,7 +32,6 @@
                 </select>
             </form>
         </div>
-        <hr>
         <table border="1">
             <thead>
                 <tr>
