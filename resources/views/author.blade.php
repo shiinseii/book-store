@@ -4,12 +4,12 @@
 
 @section('content')
     
-    <div class="container d-flex w-100 mt-5 justify-content-lg-center">
-        <h1>Authors</h1>
+    <div class="container mt-5 justify-content-lg-center">
+        <h1>Top 10 Author</h1>
 
         <hr>
 
-        <table>
+        <table class="table">
             <tr>
                 <th>No</th>
                 <th>Author Name</th>
